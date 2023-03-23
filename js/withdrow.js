@@ -6,8 +6,18 @@ document.getElementById('btn-withdrow').addEventListener('click', function () {
 
     const previousRemainingBalance = getTextElementValueById('balance-total');
 
+    if (isNaN(newWithdrowAmount)) {
+        alert('invalid number')
+        return;
+    }
+
+    if (newWithdrowAmount <= 499) {
+        alert('Cannot withdraw below $500')
+        return;
+    };
+
     if (newWithdrowAmount > previousRemainingBalance) {
-        alert('Baper Bank E Etw Taka Nai');
+        alert("Father's BANK does not have that much money");
         return;
     }
 
